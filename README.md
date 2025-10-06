@@ -1,88 +1,88 @@
-# Observatório do Mangue - Bot WhatsApp Ataíde dos Dados
+# Mangrove Observatory – Ataíde dos Dados WhatsApp Bot
 
-## Objetivo
-O sistema foi criado para facilitar a **coleta de dados ambientais colaborativos** e disponibilizar uma interface de comunicação simples entre comunidades, pesquisadores e a inteligência artificial. Ele possibilita:
+## Objective
+The system was created to facilitate the collaborative **collection of environmental data** and provide a simple communication interface between communities, researchers, and artificial intelligence. It enables users to:
+- Record environmental impacts with **location, description, date, and photos**.
+- Send images of **plant and animal species** found in the mangrove ecosystem.
+- Interact with the **Mangrove Observatory’s AI**, which answers questions about ecosystems, conservation, and sociobiodiversity.
+- Automatically end inactive conversations for better session control.
+- 
+## Main Features
 
-- Registrar impactos ambientais com **localização, descrição, data e fotos**.
-- Enviar imagens de **espécies de plantas e animais** encontradas no manguezal.
-- Interagir com a **IA do Observatório do Mangue**, que responde a perguntas sobre ecossistemas, conservação e sociobiodiversidade.
-- Encerrar conversas automaticamente em casos de inatividade para melhor controle de sessões.
+1. **Interactive Main Menu**
+   - 1️ Send image of an environmental impact
+   - 2️ Talk to artificial intelligence
+   - 3️ Send photo of an animal or plant
+   - 4️ End conversation
 
-## Funcionalidades principais
+2. **Environmental Impact Recording**
+   - Requests geographic location
+   - Requests event date
+   - Requests textual description
+   - Requests a photo as evidence
+   - All data are stored in Excel spreadsheets (`dados.xlsx`).
 
-1. **Menu inicial interativo**
-   - 1️ Enviar imagem de impacto ambiental
-   - 2️ Falar com a inteligência artificial
-   - 3️ Enviar foto de bicho ou planta
-   - 4️ Encerrar conversa
+3. **Species Recording**
+   - The user sends a photo of a plant or animal.
+   - May include a caption or popular/scientific name.
+   - Data are stored in `especies.xlsx`.
 
-2. **Registro de impactos ambientais**
-   - Solicita localização geográfica 
-   - Solicita data do evento 
-   - Solicita descrição textual 
-   - Solicita foto para comprovação 
-   - Todos os dados são armazenados em planilhas Excel (`dados.xlsx`).
+4. **Integration with Artificial Intelligence**
+   - The user can send questions to the AI.
+   - The system returns an automatic response.
+   - The user remains in this mode until typing “back”.
 
-3. **Registro de espécies**
-   - Usuário envia foto de planta ou animal.
-   - Pode incluir legenda ou nome popular/científico.
-   - Dados armazenados em `especies.xlsx`.
+5. **Session Control**
+   - Session expires after 10 minutes of inactivity.
+   - The user can manually end the session with option 4.
 
-4. **Integração com Inteligência Artificial**
-   - Usuário pode enviar perguntas para a IA.
-   - Sistema retorna resposta automática.
-   - Usuário permanece nesse modo até digitar "voltar".
+## File Structure
 
-5. **Controle de sessão**
-   - Sessão expira após 10 minutos de inatividade .
-   - Usuário pode encerrar manualmente com a opção 4.
+- `index.js` → Main bot code.
+- `src/api.js` → Function responsible for AI integration.
+- `dados.xlsx` → Environmental impact database.
+- `especies.xlsx` → Species record database.
+- `qrcode.png` → Image generated for WhatsApp authentication.
 
-## Estrutura de Arquivos
+## How to Run
 
-- `index.js` → Código principal do bot.
-- `src/api.js` → Função responsável por integrar com a IA.
-- `dados.xlsx` → Base de dados dos impactos ambientais.
-- `especies.xlsx` → Base de dados de espécies enviadas.
-- `qrcode.png` → Imagem gerada para autenticação no WhatsApp.
+1. Clone this repository:
 
-## Como executar
-
-1. Clone este repositório:
-
-2. Instale as dependências:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Execute o bot:
+3. Run the bot:
    ```bash
    node index.js
    ```
 
-4. Escaneie o QR Code gerado no terminal ou no arquivo `qrcode.png`.
+4. Scan the QR Code generated in the terminal or in the file `qrcode.png`.
 
-## Tecnologias utilizadas
+## Technologies Used
 
-- **Node.js** → Backend do sistema.
-- **WPPConnect** → Conexão com o WhatsApp.
-- **ExcelJS** → Manipulação de planilhas Excel.
-- **IA integrada** → Respostas automáticas para usuários.
+- **Node.js** → System backed.
+- **WPPConnect** → WhatsApp connection.
+- **ExcelJS** → Excel spreadsheet management.
+- **Integrated IA** → Automatic user responses.
 
-## Armazenamento de dados
+## Data Storage
 
-Os dados são organizados em planilhas Excel:
+The data are organized in Excel spreadsheets:
 
-- `dados.xlsx` → Impactos ambientais (latitude, longitude, data, descrição e imagem).
-- `especies.xlsx` → Registro de espécies (legenda e imagem).
+- `dados.xlsx` → Environmental impacts (latitude, longitude, date, description, and image).
+- `especies.xlsx` → Species records (caption and image).
 
-Isso permite fácil integração com sistemas de monitoramento, análises estatísticas e visualizações futuras.
+This structure allows for easy integration with monitoring systems, statistical analyses, and future visualizations.
 
-## Contribuidores
+## Contributors
 
-- **Yago de Jesus** – Desenvolvimento de software, IA e backend.
-- Equipe Observatório do Mangue 🌱
+- **Yago de Jesus Martins** – Conceptualization, Software development, AI, and backend.
+- **Indira Eyzaguirre** - Data validation and project management
+- **Mangrove Researchers** - Mangrove Observatorio´s team 🌱
 
-## Licença
+## License
 
-Este projeto é distribuído sob a licença MIT.  
-Consulte o arquivo [LICENSE] para mais detalhes.
+This project is distributed under the MIT License.
+See the [LICENSE] file for more details.
